@@ -228,7 +228,7 @@ sub process_line($)
 	my $prog = $sl->[2];
 	my $text = $sl->[4];
 
-	if($prog =~ /^postfix\/(.*)/) {
+	if($prog =~ /^postfix[\/|-](.*)/) {
 		my $prog = $1;
 		if($prog eq 'smtp' or ($opt{'lmtp-is-smtp'} and $prog eq 'lmtp')) {
 			if($text =~ /\bstatus=sent\b/) {
